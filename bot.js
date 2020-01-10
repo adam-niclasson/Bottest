@@ -35,4 +35,20 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
          }
      }
+
+     if (message.substring(0, 1) == '!') {
+        var args = message.substring(1).split(' ');
+        var cmd = args[0];
+       
+        args = args.splice(1);
+        switch(cmd) {
+            case 'you':
+                bot.sendMessage({
+                    to: channelID,
+                    message: "Who? me? I'm just a simple Discord bot!"
+                });
+            break;
+         }
+     }
+
 });
